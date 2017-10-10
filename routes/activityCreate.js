@@ -222,29 +222,17 @@ function createCustomer(data, next) {
 function createCase(custId, email, priority, next) {
 	console.log('createCase', custId);
 	var post_data = JSON.stringify({  
-		"type":"email",
-		"subject":"Email Case From JB for " + email,
-		"priority":priority,
-		"status":"open",
-		"labels": ["JB"],
-		"message":{  
-			"direction": "in",
-			"to": activityUtils.deskCreds.supportEmail,
-			"from": email,
-			"body": "This is a new case created for a customer coming from Journey Builder.",
-			"subject": "My email subject"
-		}
+		"name":"sara"
 	});			
 		
 	var options = {
-		'hostname': activityUtils.deskCreds.host
-		,'path': '/api/v2/customers/' + custId + '/cases'
+		'hostname': 'https://kvader-developer-edition.na24.force.com'
+		,'path': '/services/apexrest/myservice'
 		,'method': 'POST'
 		,'headers': {
 			'Accept': 'application/json' 
 			,'Content-Type': 'application/json'
 			,'Content-Length': post_data.length
-			,'Authorization': 'Basic ' + activityUtils.deskCreds.token
 		},
 	};				
 	
