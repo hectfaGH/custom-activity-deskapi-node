@@ -92,12 +92,12 @@ define( function( require ) {
         switch(step) {
             case 1:
                 $('#step1').show();
-                connection.trigger('updateButton', { button: 'next', text: 'next', enabled: Boolean(getPriority()) });
+                connection.trigger('updateButton', { button: 'next', text: 'next'});
                 connection.trigger('updateButton', { button: 'back', visible: false });
                 break;
             case 2:
                 $('#step2').show();
-                $('#showPriority').html(getPriority());
+                //$('#showPriority').html(getPriority());
                 connection.trigger('updateButton', { button: 'back', visible: true });
                 connection.trigger('updateButton', { button: 'next', text: 'done', visible: true });
                 break;
