@@ -29,19 +29,19 @@ define( function( require ) {
 				}
 			}
 			//oArgs.priority will contain a value if this activity has already been configured:
-			priority = oArgs.priority || toJbPayload['configurationArguments'].defaults.priority;            
+			//priority = oArgs.priority || toJbPayload['configurationArguments'].defaults.priority;
         }
         
-		$.get( "/version", function( data ) {
+		/*$.get( "/version", function( data ) {
 			$('#version').html('Version: ' + data.version);
-		});                
+		});  */
 
         // If there is no priority selected, disable the next button
-        if (!priority) {
+        /*if (!priority) {
             connection.trigger('updateButton', { button: 'next', enabled: false });
-        }
+        }*/
 
-		$('#selectPriority').find('option[value='+ priority +']').attr('selected', 'selected');		
+		//$('#selectPriority').find('option[value='+ priority +']').attr('selected', 'selected');
 		gotoStep(step);
         
     });
@@ -81,10 +81,10 @@ define( function( require ) {
         connection.trigger('requestEndpoints');
 
         // Disable the next button if a value isn't selected
-        $('#selectPriority').change(function() {
+        /*$('#selectPriority').change(function() {
             var priority = getPriority();
             connection.trigger('updateButton', { button: 'next', enabled: Boolean(priority) });
-        });
+        });*/
     };
 
     function gotoStep(step) {
@@ -107,20 +107,20 @@ define( function( require ) {
         }
     };
 
-    function getPriority() {
+    /*function getPriority() {
         return $('#selectPriority').find('option:selected').attr('value').trim();
-    };
+    };*/
 
     function save() {
 
-        var value = getPriority();
+        //var value = getPriority();
 
         // toJbPayload is initialized on populateFields above.  Journey Builder sends an initial payload with defaults
         // set by this activity's config.json file.  Any property may be overridden as desired.
         //toJbPayload.name = "my activity";
 
 		//this will be sent into the custom activity body within the inArguments array.
-        toJbPayload['arguments'].execute.inArguments.push({"priority": value});
+        //toJbPayload['arguments'].execute.inArguments.push({"priority": value});
 
 		/*
         toJbPayload['metaData'].things = 'stuff';
