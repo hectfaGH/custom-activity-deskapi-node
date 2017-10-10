@@ -15,7 +15,7 @@
   "arguments": {
     "execute": {
       "inArguments":[
-        { "Name":"{{Contact.Attribute.Sara-Data-Extension.Nombre}}"},
+        { "Name":"{{Contact.Attribute.Sara-Data-Extension.Nombre}}"}
       ],
       "url": "https://app-baz-deskapi.herokuapp.com/ixn/activities/create-case/execute/",
       "verb": "POST",
@@ -28,7 +28,6 @@
   },
   "configurationArguments": {
     "applicationExtensionKey": "sr-activity-desk-create-case",
-    "defaults": { "priority": "4"},
     "save": {
       "url": "https://app-baz-deskapi.herokuapp.com/ixn/activities/create-case/save/",
       "body": "",
