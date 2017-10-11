@@ -1,6 +1,6 @@
 'use strict';
 var https = require( 'https' );
-//var activityUtils = require('./activityUtils');
+var activityUtils = require('./activityUtils');
 
 
 /*
@@ -8,7 +8,7 @@ var https = require( 'https' );
  */
 exports.edit = function( req, res ) {
     // Data from the req and put it in an array accessible to the main app.
-    //console.log( req.body );
+    console.log( req.body );
     activityUtils.logData( req );
     res.send( 200, 'Edit' );
 };
@@ -18,7 +18,7 @@ exports.edit = function( req, res ) {
  */
 exports.save = function( req, res ) {
     // Data from the req and put it in an array accessible to the main app.
-    //console.log( req.body );
+    console.log( req.body );
     activityUtils.logData( req );
     res.send( 200, 'Save' );
 };
@@ -28,7 +28,7 @@ exports.save = function( req, res ) {
  */
 exports.publish = function( req, res ) {
     // Data from the req and put it in an array accessible to the main app.
-    //console.log( req.body );
+    console.log( req.body );
     activityUtils.logData( req );
     res.send( 200, 'Publish' );
 };
@@ -38,7 +38,7 @@ exports.publish = function( req, res ) {
  */
 exports.validate = function( req, res ) {
     // Data from the req and put it in an array accessible to the main app.
-    //console.log( req.body );
+    console.log( req.body );
     activityUtils.logData( req );
     res.send( 200, 'Validate' );
 };
@@ -48,7 +48,7 @@ exports.validate = function( req, res ) {
  */
 exports.execute = function( req, res ) {
     // Data from the req and put it in an array accessible to the main app.
-    //console.log( req.body );
+    console.log( req.body );
     activityUtils.logData( req );
 
 	initCase(req,res);
