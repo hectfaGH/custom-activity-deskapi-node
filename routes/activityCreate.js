@@ -222,12 +222,12 @@ function createCustomer(data, next) {
 function createCase(custId, email, priority, next) {
 	console.log('createCase', custId);
 	var post_data = JSON.stringify({  
-		"name":"sara"
+		"name":"sara desde activityCreate"
 	});			
 		
 	var options = {
-		'hostname': 'https://kvader-developer-edition.na24.force.com'
-		,'path': '/services/apexrest/myservice'
+		'hostname': 'https://kvader-developer-edition.na24.force.com/services/apexrest'
+		,'path': '/myservice'
 		,'method': 'POST'
 		,'headers': {
 			'Accept': 'application/json' 
