@@ -162,8 +162,9 @@ function findCustIdByEmail(email, next) {
 
 
 function createCustomer(data, next) {
+	console.log('dentro de createCustomer function');
 	console.log('createCustomer', data.fname, data.lname);
-	var post_data = JSON.stringify({  
+	/*var post_data = JSON.stringify({
 		"first_name":data.fname
 		,"last_name":data.lname
 		,"emails": [
@@ -172,9 +173,9 @@ function createCustomer(data, next) {
 				"value": data.email
 			}
     	]
-	});			
+	});	*/
 		
-	var options = {
+	/*var options = {
 		'hostname': activityUtils.deskCreds.host
 		,'path': '/api/v2/customers'
 		,'method': 'POST'
@@ -184,7 +185,21 @@ function createCustomer(data, next) {
 			,'Content-Length': post_data.length
 			,'Authorization': 'Basic ' + activityUtils.deskCreds.token
 		},
-	};				
+	};*/
+	var post_data = JSON.stringify({
+		"name":"sara desde activityCreate"
+	});
+
+	var options = {
+		'hostname': 'https://kvader-developer-edition.na24.force.com/services/apexrest'
+		,'path': '/myservice'
+		,'method': 'POST'
+		,'headers': {
+			'Accept': 'application/json'
+			,'Content-Type': 'application/json'
+			,'Content-Length': post_data.length
+		},
+	};
 	
 	var httpsCall = https.request(options, function(response) {
 		var data = ''
@@ -219,7 +234,7 @@ function createCustomer(data, next) {
 };
 
 
-function createCase(custId, email, priority, next) {
+function createCase(custId, next) {
 	console.log('createCase', custId);
 	var post_data = JSON.stringify({  
 		"name":"sara desde activityCreate"
