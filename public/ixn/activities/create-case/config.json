@@ -28,6 +28,7 @@
   },
   "configurationArguments": {
     "applicationExtensionKey": "sr-activity-desk-create-case",
+    "defaults": { "priority": "4"},
     "save": {
       "url": "https://app-baz-deskapi.herokuapp.com/ixn/activities/create-case/save/",
       "body": "",
