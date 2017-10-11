@@ -15,7 +15,7 @@
   "arguments": {
     "execute": {
       "inArguments":[
-        { "Name":"{{Contact.Attribute.Sara-Data-Extension.Nombre}}"}
+        { "name":"{{Contact.Attribute.Sara-Data-Extension.Nombre}}"}
       ],
       "url": "https://app-baz-deskapi.herokuapp.com/ixn/activities/create-case/execute/",
       "verb": "POST",
