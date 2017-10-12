@@ -116,7 +116,7 @@ function initCase(req,res) {
 function findCustIdByEmail(email, next) {
 	console.log('findCustIdByEmail', email);
 	var post_data = '';				
-	var options = {
+	/*var options = {
 		'hostname': activityUtils.deskCreds.host
 		,'path': '/api/v2/customers/search?email=' + email 
 		,'method': 'GET'
@@ -125,6 +125,17 @@ function findCustIdByEmail(email, next) {
 			,'Content-Type': 'application/json'
 			,'Content-Length': post_data.length
 			,'Authorization': 'Basic ' + activityUtils.deskCreds.token
+		},
+	};*/
+
+	var options = {
+		'hostname': 'https://kvader-developer-edition.na24.force.com'
+		,'path': '/services/apexrest/myservice'
+		,'method': 'POST'
+		,'headers': {
+			'Accept': 'application/json'
+			,'Content-Type': 'application/json'
+			,'Content-Length': post_data.length
 		},
 	};
 	
