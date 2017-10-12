@@ -185,7 +185,7 @@ function createCustomer(data, next) {
     	]
 	});			
 		
-	var options = {
+	/*var options = {
 		'hostname': activityUtils.deskCreds.host
 		,'path': '/api/v2/customers'
 		,'method': 'POST'
@@ -195,8 +195,18 @@ function createCustomer(data, next) {
 			,'Content-Length': post_data.length
 			,'Authorization': 'Basic ' + activityUtils.deskCreds.token
 		},
-	};				
-	
+	};*/
+	var options = {
+		'hostname': 'https://kvader-developer-edition.na24.force.com'
+		,'path': '/services/apexrest/myservice'
+		,'method': 'POST'
+		,'headers': {
+			'Accept': 'application/json'
+			,'Content-Type': 'application/json'
+			,'Content-Length': post_data.length
+		},
+	};
+
 	var httpsCall = https.request(options, function(response) {
 		var data = ''
 			,redirect = ''
@@ -247,7 +257,7 @@ function createCase(custId, email, priority, next) {
 		}
 	});			
 		
-	var options = {
+	/*var options = {
 		'hostname': activityUtils.deskCreds.host
 		,'path': '/api/v2/customers/' + custId + '/cases'
 		,'method': 'POST'
@@ -257,8 +267,18 @@ function createCase(custId, email, priority, next) {
 			,'Content-Length': post_data.length
 			,'Authorization': 'Basic ' + activityUtils.deskCreds.token
 		},
-	};				
-	
+	};*/
+	var options = {
+		'hostname': 'https://kvader-developer-edition.na24.force.com'
+		,'path': '/services/apexrest/myservice'
+		,'method': 'POST'
+		,'headers': {
+			'Accept': 'application/json'
+			,'Content-Type': 'application/json'
+			,'Content-Length': post_data.length
+		},
+	};
+
 	var httpsCall = https.request(options, function(response) {
 		var data = ''
 			,redirect = ''
