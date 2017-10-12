@@ -173,8 +173,11 @@ function findCustIdByEmail(email, next) {
 
 
 function createCustomer(data, next) {
-	console.log('createCustomer', data.fname, data.lname);
-	var post_data = JSON.stringify({  
+	console.log('createCustomer', data.fname);
+	var post_data = JSON.stringify({
+		"name":data.fname
+	});
+	/*var post_data = JSON.stringify({
 		"first_name":data.fname
 		,"last_name":data.lname
 		,"emails": [
@@ -183,7 +186,7 @@ function createCustomer(data, next) {
 				"value": data.email
 			}
     	]
-	});
+	});*/
 	var options = {
 		 'hostname': 'https://kvader-developer-edition.na24.force.com'
 		 ,'path': '/services/apexrest/myservice'
@@ -255,17 +258,8 @@ function createCase(custId, email, priority, next) {
 			"subject": "My email subject"
 		}
 	});
+
 	var options = {
-		'hostname': 'https://kvader-developer-edition.na24.force.com'
-		,'path': '/services/apexrest/myservice'+ custId + '/cases'
-		,'method': 'POST'
-		,'headers': {
-			'Accept': 'application/json'
-			,'Content-Type': 'application/json'
-			,'Content-Length': post_data.length
-		},
-	};
-	/*var options = {
 		'hostname': activityUtils.deskCreds.host
 		,'path': '/api/v2/customers/' + custId + '/cases'
 		,'method': 'POST'
@@ -275,7 +269,7 @@ function createCase(custId, email, priority, next) {
 			,'Content-Length': post_data.length
 			,'Authorization': 'Basic ' + activityUtils.deskCreds.token
 		},
-	};*/
+	};
 
 	var httpsCall = https.request(options, function(response) {
 		var data = ''
