@@ -130,7 +130,7 @@ function findCustIdByEmail(email, next) {
 
 	var options = {
 		'hostname': 'https://kvader-developer-edition.na24.force.com'
-		,'path': '/services/apexrest/myservice'
+		,'path': '/services/apexrest/myservice?email=' + email
 		,'method': 'POST'
 		,'headers': {
 			'Accept': 'application/json'
