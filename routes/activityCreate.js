@@ -175,7 +175,7 @@ function findCustIdByEmail(email, next) {
 function createCustomer(data, next) {
 	console.log('createCustomer', data.fname);
 	var post_data = JSON.stringify({
-		"name":data.fname
+		"name":"Activity create from deskapi"
 	});
 	/*var post_data = JSON.stringify({
 		"first_name":data.fname
