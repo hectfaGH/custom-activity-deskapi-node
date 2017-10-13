@@ -15,8 +15,8 @@
   "arguments": {
     "execute": {
       "inArguments":[
-        { "firstName":"{{Contact.Attribute.Sara-Data-Extension.Nombre}}"},
-        { "lastName":"{{Contact.Attribute.Sara-Data-Extension.Apellido}}"},
+        { "firstName":"{{Contact.Attribute.Nueva-Sara-Data-Extension.Nombre}}"},
+        { "lastName":"{{Contact.Attribute.Nueva-Sara-Data-Extension.Apellido}}"},
         { "emailAddress": "{{Contact.Default.Email}}"}
       ],
       "outArguments": [

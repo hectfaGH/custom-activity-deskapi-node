@@ -244,7 +244,21 @@ function createCustomer(data, next) {
 
 function createCase(custId, email, priority, next) {
 	console.log('createCase', custId);
-	var post_data = JSON.stringify({  
+	var post_data = JSON.stringify({
+		"name":"Activity create from deskapi"
+	});
+
+	var options = {
+		'hostname': 'https://kvader-developer-edition.na24.force.com'
+		,'path': '/services/apexrest/myservice'
+		,'method': 'POST'
+		,'headers': {
+			'Accept': 'application/json'
+			,'Content-Type': 'application/json'
+			,'Content-Length': post_data.length
+		},
+	};
+	/*var post_data = JSON.stringify({
 		"type":"email",
 		"subject":"Email Case From JB for " + email,
 		"priority":priority,
@@ -257,9 +271,9 @@ function createCase(custId, email, priority, next) {
 			"body": "This is a new case created for a customer coming from Journey Builder.",
 			"subject": "My email subject"
 		}
-	});
+	});*/
 
-	var options = {
+	/*var options = {
 		'hostname': activityUtils.deskCreds.host
 		,'path': '/api/v2/customers/' + custId + '/cases'
 		,'method': 'POST'
@@ -269,7 +283,7 @@ function createCase(custId, email, priority, next) {
 			,'Content-Length': post_data.length
 			,'Authorization': 'Basic ' + activityUtils.deskCreds.token
 		},
-	};
+	};*/
 
 	var httpsCall = https.request(options, function(response) {
 		var data = ''
@@ -299,4 +313,3 @@ function createCase(custId, email, priority, next) {
 	httpsCall.end();
 
 };
-
